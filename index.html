@@ -113,9 +113,7 @@
                          <ul class="nav nav-tabs" role="tablist">
                               <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab">Creadores de contenido</a></li>
 
-                              <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">Marcas B2C</a></li>
-
-                              <li><a href="#tab03" aria-controls="tab03" role="tab" data-toggle="tab">Campañas publicitarias</a></li></ul>
+                              <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">Marcas</a></li>
 
                          <div class="tab-content">
                               <div class="tab-pane active" id="tab01" role="tabpanel">
@@ -124,13 +122,32 @@
                                         <p>Buscá el match perfecto con las marcas que mejor se adaptan a tu contenido.
 					Postulate a las campañas y empezá a colaborar.</p>
                                    </div>
-                                   <div class="tab-pane-item">
-                                        <h2>Métricas</h2>
-                                        <p>Visibilizá las métricas reales de tus colaboraciones</p>
-				</div>
-                                   <div class="tab-pane-item">
-                                        <h2>Book</h2>
-                                        <p>Armá tu book online para que las marcas puedan revisar tus contenidos</p>   
+                                   <section id="creador-filters">
+  <h3>Filtros para Creadores de Contenido</h3>
+  <form>
+    <label for="pais">País:</label>
+    <input type="text" id="pais" name="pais">
+
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad">
+
+    <label for="rubro">Rubro:</label>
+    <input type="text" id="rubro" name="rubro">
+
+    <label for="campana">Campaña de producto o servicio:</label>
+    <input type="text" id="campana" name="campana">
+
+    <label for="pago">Sistema de pago:</label>
+    <select id="pago" name="pago">
+      <option value="canje">Canje</option>
+      <option value="pago">Pago</option>
+      <option value="ambas">Ambas</option>
+    </select>
+
+    <button type="submit">Buscar Campañas</button>
+  </form>
+</section>
+
                                    </div>
                               </div>
 
@@ -140,20 +157,7 @@
                                         <h2>Seleccioná al influencer correcto</h2>
                                         <p>Filtrá y buscá los perfiles que mejor se adapten a tus productos o servicios</p>
                                    </div>
-                                   <div class="tab-pane-item">
-                                        <h2>Métricas</h2>
-                                        <p>Verificá en tiempo real, las métricas del contenido aplicado a tus campañas</p>
-                                   </div>
-                                   <div class="tab-pane-item">
-                                        <h2>Paquetes</h2>
-                                        <p>Podés seleccionar paquetes de influencers para utilizar en tus campañas. Nosotros te brindamos los contactos y gestionamos los términos contractuales para que tengas una colaboración segura y transparente.</p>
-                                   </div>
-                              </div>
-
-                              <div class="tab-pane" id="tab03" role="tabpanel">
-                                   <div class="tab-pane-item">
-                                        
-<section id="empresa-filters">
+                                   <section id="empresa-filters">
   <h3>Filtros para Empresas</h3>
   <form>
     <label for="pais">País:</label>
@@ -192,6 +196,9 @@
     <button type="submit">Buscar Creadores</button>
   </form>
 </section>
+				      
+<div id="resultados-empresa" style="display:none; margin-top: 20px;"></div>
+
 
                                    </div>
                               </div>
@@ -217,7 +224,8 @@
 
                     
 <h1>¿Qué es MatchBrand?</h1>
-<p>Somos una plataforma que nace para facilitar la conexión entre influencers y marcas B2C. Nuestro objetivo es hacer que las colaboraciones sean más simples, transparentes y efectivas para ambas partes.</p>
+<p>Somos una plataforma que nace para facilitar la conexión entre influencers y marcas B2C. 
+	Nuestro objetivo es hacer que las colaboraciones sean más simples, transparentes y efectivas para ambas partes.</p>
 
 
 
@@ -392,5 +400,35 @@
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
 
+document.querySelector('#empresa-filters form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const resultados = `
+    <h4>Creadores sugeridos:</h4>
+    <ul>
+      <li><strong>@viajera_uy</strong> - Instagram - 45K seguidores - Intereses: viajes, lifestyle</li>
+      <li><strong>@techguy.latam</strong> - YouTube - 120K seguidores - Intereses: tecnología, gadgets</li>
+      <li><strong>@fitlife_mvd</strong> - TikTok - 80K seguidores - Intereses: fitness, salud</li>
+    </ul>
+  `;
+  document.getElementById('resultados-empresa').innerHTML = resultados;
+  document.getElementById('resultados-empresa').style.display = 'block';
+});
+
+
+document.querySelector('#creador-filters form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const resultados = `
+    <h4>Campañas disponibles:</h4>
+    <ul>
+      <li><strong>Campaña: Lentes de Sol Verano 2025</strong> - Pago + Canje - Marca: SunLook</li>
+      <li><strong>Campaña: Snacks Saludables</strong> - Solo Canje - Marca: FitBites</li>
+      <li><strong>Campaña: App de Finanzas Personales</strong> - Pago - Marca: FinSmart</li>
+    </ul>
+  `;
+  document.getElementById('resultados-creador').innerHTML = resultados;
+  document.getElementById('resultados-creador').style.display = 'block';
+});
+
+	
 </body>
 </html>
