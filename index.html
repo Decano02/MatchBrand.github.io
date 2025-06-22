@@ -118,7 +118,7 @@
 
         <section id="creador-filters">
           <h4>Filtros para Creadores</h4>
-          <form>
+          <form onsubmit="mostrarResultadosCreador(); return false;">
             <label for="pais">País:</label>
             <input type="text" id="pais" name="pais">
 
@@ -138,10 +138,8 @@
               <option value="ambas">Ambas</option>
             </select>
 
-            <button type="submit">Buscar Campañas</button>
+            <button type="submit" class="btn btn-primary mt-3">Buscar Campañas</button>
           </form>
-
-          <div id="resultados-creador" style="display:none; margin-top: 20px;"></div>
         </section>
       </div>
 
@@ -154,7 +152,7 @@
 
         <section id="empresa-filters">
           <h4>Filtros para Empresas</h4>
-          <form>
+          <form onsubmit="mostrarResultadosEmpresa(); return false;">
             <label for="pais">País:</label>
             <input type="text" id="pais" name="pais">
 
@@ -188,16 +186,67 @@
               <option value="ambas">Ambas</option>
             </select>
 
-            <button type="submit">Buscar Creadores</button>
+            <button type="submit" class="btn btn-primary mt-3">Buscar Creadores</button>
           </form>
-
-          <div id="resultados-empresa" style="display:none; margin-top: 20px;"></div>
         </section>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- MODAL RESULTADOS CREADOR -->
+<div class="modal fade" id="modalCreador" tabindex="-1" role="dialog" aria-labelledby="modalCreadorLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Campañas disponibles</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                 <li><strong>SunLook</strong> – Lentes de sol verano 2025 – Pago + Canje</li>
+          <li><strong>FitBites</strong> – Snacks saludables – Solo Canje</li>
+          <li><strong>FinSmart</strong> – App de finanzas personales – Pago</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RESULTADOS EMPRESA -->
+<div class="modal fade" id="modalEmpresa" tabindex="-1" role="dialog" aria-labelledby="modalEmpresaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Creadores sugeridos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li><strong>@viajera_uy</strong> – Instagram – 45K seguidores – Viajes, lifestyle</li>
+          <li><strong>@techguy.latam</strong> – YouTube – 120K seguidores – Tecnología</li>
+          <li><strong>@fitlife_mvd</strong> – TikTok – 80K seguidores – Fitness, salud</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS PARA MOSTRAR LOS MODALES -->
+<script>
+  function mostrarResultadosCreador() {
+    $('#modalCreador').modal('show');
+  }
+
+  function mostrarResultadosEmpresa() {
+    $('#modalEmpresa').modal('show');
+  }
+</script>
+
 
 
      <!-- ABOUT -->
@@ -382,36 +431,6 @@
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
-
-document.querySelector('#empresa-filters form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const resultados = `
-    <h4>Creadores sugeridos:</h4>
-    <ul>
-      <li><strong>@viajera_uy</strong> - Instagram - 45K seguidores - Intereses: viajes, lifestyle</li>
-      <li><strong>@techguy.latam</strong> - YouTube - 120K seguidores - Intereses: tecnología, gadgets</li>
-      <li><strong>@fitlife_mvd</strong> - TikTok - 80K seguidores - Intereses: fitness, salud</li>
-    </ul>
-  `;
-  document.getElementById('resultados-empresa').innerHTML = resultados;
-  document.getElementById('resultados-empresa').style.display = 'block';
-});
-
-
-document.querySelector('#creador-filters form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const resultados = `
-    <h4>Campañas disponibles:</h4>
-    <ul>
-      <li><strong>Campaña: Lentes de Sol Verano 2025</strong> - Pago + Canje - Marca: SunLook</li>
-      <li><strong>Campaña: Snacks Saludables</strong> - Solo Canje - Marca: FitBites</li>
-      <li><strong>Campaña: App de Finanzas Personales</strong> - Pago - Marca: FinSmart</li>
-    </ul>
-  `;
-  document.getElementById('resultados-creador').innerHTML = resultados;
-  document.getElementById('resultados-creador').style.display = 'block';
-});
-
 	
 </body>
 </html>
