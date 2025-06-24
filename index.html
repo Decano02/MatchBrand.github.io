@@ -116,32 +116,41 @@
           <p>Monetizá tu contenido colaborando con las marcas. Buscá el match perfecto con las campañas que mejor se adaptan a tu estilo.</p>
         </div>
 
-        <section id="creador-filters">
-          <h4>Filtros para Creadores</h4>
-          <form onsubmit="mostrarResultadosCreador(); return false;">
-            <label for="pais">País:</label>
-            <input type="text" id="pais" name="pais">
+        <section id="creador-filters" class="container mt-5">
+  <h4 class="mb-4">Filtros para Creadores</h4>
+  <form onsubmit="mostrarResultadosCreador(); return false;">
+    <div class="form-group mb-3">
+      <label for="pais">País:</label>
+      <input type="text" id="pais" name="pais" class="form-control">
+    </div>
 
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad">
+    <div class="form-group mb-3">
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad" class="form-control">
+    </div>
 
-            <label for="rubro">Rubro:</label>
-            <input type="text" id="rubro" name="rubro">
+    <div class="form-group mb-3">
+      <label for="rubro">Rubro:</label>
+      <input type="text" id="rubro" name="rubro" class="form-control">
+    </div>
 
-            <label for="campana">Campaña de producto o servicio:</label>
-            <input type="text" id="campana" name="campana">
+    <div class="form-group mb-3">
+      <label for="campana">Campaña de producto o servicio:</label>
+      <input type="text" id="campana" name="campana" class="form-control">
+    </div>
 
-            <label for="pago">Sistema de pago:</label>
-            <select id="pago" name="pago">
-              <option value="canje">Canje</option>
-              <option value="pago">Pago</option>
-              <option value="ambas">Ambas</option>
-            </select>
+    <div class="form-group mb-4">
+      <label for="pago">Sistema de pago:</label>
+      <select id="pago" name="pago" class="form-control">
+        <option value="canje">Canje</option>
+        <option value="pago">Pago</option>
+        <option value="ambas">Ambas</option>
+      </select>
+    </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Buscar Campañas</button>
-          </form>
-        </section>
-      </div>
+    <button type="submit" class="btn btn-primary">Buscar Campañas</button>
+  </form>
+</section>
 
       <!-- Empresas -->
       <div class="col-md-6 col-sm-6">
