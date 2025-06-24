@@ -159,45 +159,62 @@
           <p>Seleccioná al influencer correcto. Filtrá y buscá los perfiles que mejor se adapten a tus productos o servicios.</p>
         </div>
 
-        <section id="empresa-filters">
-          <h4>Filtros para Empresas</h4>
-          <form onsubmit="mostrarResultadosEmpresa(); return false;">
-            <label for="pais">País:</label>
-            <input type="text" id="pais" name="pais">
+        <section id="empresa-filters" class="container mt-5">
+  <h4 class="mb-4">Filtros para Empresas</h4>
+  <form onsubmit="mostrarResultadosEmpresa(); return false;">
+    <div class="form-group mb-3">
+      <label for="pais">País:</label>
+      <input type="text" id="pais" name="pais" class="form-control">
+    </div>
 
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad">
+    <div class="form-group mb-3">
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad" class="form-control">
+    </div>
 
-            <label for="rubro">Rubro:</label>
-            <input type="text" id="rubro" name="rubro">
+    <div class="form-group mb-3">
+      <label for="rubro">Rubro:</label>
+      <input type="text" id="rubro" name="rubro" class="form-control">
+    </div>
 
-            <label for="seguidores">Cantidad mínima de seguidores:</label>
-            <input type="number" id="seguidores" name="seguidores">
+    <div class="form-group mb-3">
+      <label for="seguidores">Cantidad mínima de seguidores:</label>
+      <input type="number" id="seguidores" name="seguidores" class="form-control">
+    </div>
 
-            <label for="red">Red Social:</label>
-            <select id="red" name="red">
-              <option value="instagram">Instagram</option>
-              <option value="tiktok">TikTok</option>
-              <option value="youtube">YouTube</option>
-              <option value="otro">Otro</option>
-            </select>
+    <div class="form-group mb-3">
+      <label for="red">Red Social:</label>
+      <select id="red" name="red" class="form-control">
+        <option value="instagram">Instagram</option>
+        <option value="tiktok">TikTok</option>
+        <option value="youtube">YouTube</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
 
-            <label for="producto">Producto o servicio a publicitar:</label>
-            <input type="text" id="producto" name="producto">
+    <div class="form-group mb-3">
+      <label for="producto">Producto o servicio a publicitar:</label>
+      <input type="text" id="producto" name="producto" class="form-control">
+    </div>
 
-            <label for="intereses">Intereses:</label>
-            <input type="text" id="intereses" name="intereses">
+    <div class="form-group mb-3">
+      <label for="intereses">Intereses:</label>
+      <input type="text" id="intereses" name="intereses" class="form-control">
+    </div>
 
-            <label for="pago">Sistema de pago:</label>
-            <select id="pago" name="pago">
-              <option value="cobro">Cobro</option>
-              <option value="canje">Canje</option>
-              <option value="ambas">Ambas</option>
-            </select>
+    <div class="form-group mb-4">
+      <label for="pago">Sistema de pago:</label>
+      <select id="pago" name="pago" class="form-control">
+        <option value="cobro">Cobro</option>
+        <option value="canje">Canje</option>
+        <option value="ambas">Ambas</option>
+      </select>
+    </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Buscar Creadores</button>
-          </form>
-        </section>
+    <button type="submit" class="btn btn-primary">Buscar Creadores</button>
+  </form>
+</section>
+
       </div>
 
     </div>
